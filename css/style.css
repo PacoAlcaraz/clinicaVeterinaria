@@ -1,0 +1,195 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+
+body{
+  font-family: 'Klee One', cursive;
+}
+#container{
+    display: flex;
+    flex-direction: column;
+    -ms-flex-direction: column;
+
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  border-bottom: 2px solid ff7e5f;
+  background: -webkit-linear-gradient(to right, #bdc3c7, #2c3e50); 
+  background: linear-gradient(to right, #bdc3c7, #2c3e50); 
+  align-items: center;
+  height: 80px;
+}
+
+header h1{
+    font-size: 3rem;
+}
+
+form {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+main{
+  margin-top: 30px;
+}
+
+fieldset{
+  -webkit-box-shadow: 9px 10px 13px 0px rgba(0,0,0,0.56); 
+box-shadow: 9px 10px 13px 0px rgba(0,0,0,0.56);
+border: 3px solid #bdc3c7;
+}
+
+legend{
+  margin: 0 5px;
+  font-size: 30px;
+}
+
+.input_container {
+  background: -webkit-linear-gradient(to right, #bdc3c7, #2c3e50); 
+  background: linear-gradient(to right, #bdc3c7, #2c3e50);
+position: relative;
+overflow: hidden;
+margin: 15px 80px;
+padding: 4px 0;
+z-index: 1;
+font-size: 15px;
+display: flex;
+flex-direction: column;
+}
+
+.input_container::before {
+  content: '';
+width: 110%;
+aspect-ratio: 1;
+position: absolute;
+inset: 0 0 0 0;
+margin: auto;
+-webkit-animation: rotate6234 2.5s ease-in-out infinite;
+animation: rotate6234 2.5s cubic-bezier(.79,.14,.15,.86) infinite;
+z-index: -1;
+background-image: conic-gradient(from 0deg at 50% 50%, #073AFF00 0%, #FF0000FF 25%, #073AFF00 25%);
+}
+
+.input_container > input {
+  width: 210px;
+height: 30px;
+font-size: inherit;
+
+border: none;
+padding: 12px;
+background: -webkit-linear-gradient(to right, #bdc3c7, #2c3e50); 
+  background: linear-gradient(to right, #bdc3c7, #2c3e50);
+outline: 5px solid #bdc3c7;
+}
+
+.input_container > input:focus, .input_container > textarea:focus {
+  outline: none;
+}
+.input_container.valid > input:focus, .input_container.valid > textarea:focus {
+  outline: 4px solid rgb(0, 255, 183);
+}
+
+.input_container > input:not(:-moz-placeholder-shown), .input_container > textarea:not(:-moz-placeholder-shown) {
+  outline: none;
+}
+.input_container.valid > input:not(:-moz-placeholder-shown), .input_container.valid > textarea:not(:-moz-placeholder-shown) {
+  outline: 4px solid rgb(0, 255, 183);
+}
+
+.input_container > input:not(:-ms-input-placeholder), .input_container > textarea:not(:-ms-input-placeholder) {
+  outline: none;
+}
+
+.input_container.valid > input:not(:-ms-input-placeholder), .input_container.valid > textarea:not(:-ms-input-placeholder) {
+  outline: 4px solid rgb(0, 255, 183);
+}
+.input_container > input:not(:placeholder-shown), .input_container > textarea:not(:placeholder-shown) {
+  outline: none;
+}
+.input_container > input.valid:not(:placeholder-shown), .input_container > textarea.valid:not(:placeholder-shown) {
+  outline: 4px solid rgb(0, 255, 183);
+}
+input.valid, textarea.valid {
+  outline: 4px solid rgb(0, 255, 183);
+  border-radius: 0;
+}
+
+input.valid:hover, textarea.valid:hover{
+  outline:4px solid rgb(0, 255, 183);
+}
+
+textarea {
+  outline: 5px solid #bdc3c7;
+}
+/* input:focus.valid {
+  outline: none;
+} */
+
+/* This is the style of our error messages */
+.error {
+  width: 100%;
+  padding: 0;
+  font-size: 80%;
+  color: white;
+  background-color: #900;
+  border-radius: 0 0 5px 5px;
+  box-sizing: border-box;
+}
+
+.error.active {
+  padding: 0.3em;
+}
+
+.boton{
+  width: 300px;
+  height: 60px;
+  margin: 60px auto;
+}
+
+#bloque{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#botones{
+  display: flex;
+  justify-content: center;
+}
+
+footer{
+  display: flex;
+  justify-content: flex-end;
+  background: -webkit-linear-gradient(to right, #bdc3c7, #2c3e50);
+  background: linear-gradient(to right, #bdc3c7, #2c3e50);
+  height: 80px;
+  align-items: center;
+
+}
+@-webkit-keyframes rotate6234 {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate6234 {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
