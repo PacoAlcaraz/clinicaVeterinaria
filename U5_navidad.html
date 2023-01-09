@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Klee+One:wght@600&display=swap" rel="stylesheet">
+    <script defer src="U5_navidad.js"></script>
+    <title>Clínica Veterinaria</title>
+</head>
+<body>
+    <div id="container">
+        <header>
+            <h1>Clínica +Cotas</h1>
+        </header>
+        <main>
+            <form id="formulario" action="" method="post" id="formulario">
+                <div id="bloque">
+                    <fieldset>
+                        <legend>Datos Mascota</legend>
+                        <div class="input_container">
+                            <input type="text" name="nombreMascota" id="nombreMascota" title="Longitud mínima 2 y máxima 25, comienzo por mayúscula" placeholder="Nombre...">
+                            <span class="error" aria-live="polite"></span>
+                        </div>
+                        <div class="input_container">
+                            <input type="text" name="fechaNacimiento" id="fechaNacimiento" title="dd-mm-aaaa" placeholder="Fecha de Nacimiento...">
+                            <span class="error" aria-live="polite"></span>
+                        </div>
+                        <div class="input_container">
+                            <input type="text" name="raza" id="raza" title="Comienzo por mayúscula" placeholder="Raza...">
+                            <span class="error" aria-live="polite"></span>
+                        </div>
+                        <div class="input_container">
+                            <textarea name="descripcion" placeholder="Descripcion..." id="descripcion" title="Máximo 200 carácteres" cols="30" rows="10"></textarea>
+                            <span class="error" aria-live="polite"></span>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Datos Cliente</legend>
+                        <div class="input_container">
+                            <input type="text" name="nombre" id="nombre" title="Nombre Apellido1 Apellido2" placeholder="Nombre...">
+                            <span class="error" aria-live="polite"></span>
+                        </div>
+                        <div class="input_container">
+                            <input type="text" name="localidad" id="localidad" title="Mayúsculas, longitud máxima 20" placeholder="Localidad...">
+                            <span class="error" aria-live="polite"></span>
+                        </div>
+                        <div class="input_container">
+                            <input type="text" name="codigoPostal" id="codigoPostal" title="5 dígitos, 30xxx" placeholder="C.P.">
+                            <span class="error" aria-live="polite"></span>
+                        </div>
+                        <div class="input_container">
+                            <input type="text" name="tipoVia" id="tipoVia" title="Avenida,Calle,Carretera,Vía" placeholder="Tipo de Vía...">
+                            <span class="error" aria-live="polite"></span>
+                        </div>
+                        <div class="input_container">
+                            <input type="text" name="nombreVia" id="nombreVia" title="Longitud mínima 1 y máxima 25" placeholder="Nombre Vía...">
+                            <span class="error" aria-live="polite"></span>
+                        </div>
+                        <div class="input_container">
+                            <input type="text" name="numero" id="numero" title="De 1 a 999" placeholder="Número...">
+                            <span class="error" aria-live="polite"></span>
+                        </div>
+                    </fieldset>
+                </div>
+                <div id="botones">
+                    <input type="submit" class="boton" value="Enviar">
+                    <input type="button" class="boton" value="Mostrar" id="botonOculto" hidden>;
+                </div>
+            </form>
+        </main>
+        <footer>
+            <h3>Design by Pacm3n</h3>
+        </footer>
+    </div>
+</body>
+</html>
