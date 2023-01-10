@@ -1,32 +1,3 @@
-/* Crear un formulario que recoja los datos para registrar a un cliente y su mascota o mascotas en una clínica veterinaria.
-El formulario es libre, puede llevar los campos que veáis necesarios con sus correspondientes validaciones utilizando expresiones regulares.
-Mínimo debe llevar:
-- Nombre del dueño: Debe tener una longitud mínima de 3 y máxima de 30 caracteres. Debe comenzar por mayúsculas tanto el nombre como los apellidos que se indiquen, es decir después de los espacios que separan al nombre y apellidos debe ir la primera letra de cada palabra en mayúsculas. Formato nombre: <<Nombre Apellido1 Apellido2 >> 
-- Dirección se puede descomponer en varios campos:
-Localidad: Debe introducirse todo en mayúsculas y la longitud máxima es 20 caracteres. No debe permitir caracteres especiales ni números, sólo letras y el carácter espacio. 
-Código Postal: Validamos que sea un número de 5 dígitos. Los dos primeros serán "30" y los tres últimos los que el usuario quiera introducir. 
-Tipo vía: que pueda tomar los valores: Avenida, Calle, Carretera, Vía.
-Nombre de la vía: Longitud mínima 1 y máxima 25. El nombre puede comenzar por una letra o un número.
-Número: Valores permitidos del 1 al 999.
-- Nombre mascota: Longitud mínima 2 y máxima 25.
-- Fecha nacimiento mascota: Formato permitido será << dd-mm-aaaa>> donde 'dd' es el día y permite valores de 1 a 31, 'mm' el mes de 1 a 12 y 'aaaa' el año de 2000 al año actual.
-- Descripción: Esto será un textArea con una longitud máxima de 200. Aquí se permitirá cualquier carácter.
-Los campos deben ser todos input type text y utilizar las expresiones regulares para validar dichos campos.
-Habrá un botón "guardar" que validará todos los datos introducidos y en caso de ser correctos se creará un objeto Cliente con todos esos datos y los almacenará en un array "misClientes". En caso de ser todos correctos se mostrará un mensaje indicando que se han guardado los datos y se limpiarán los campos del formulario.
-El objeto Cliente se compone de nombre, dirección (tipo_via, nombre_vía, número,...) y mascota(nombre, edad, descripción).
-En caso de que alguno de los campos no sea correcto debéis resaltarlo e indicar que se ha producido un error. No borrar los datos introducidos, que sea el usuario el que lo corrija.
-Poner el foco en el primer campo incorrecto para que el usuario empiece a corregir.
-No se guardarán los datos en el array los datos hasta que estos no estén bien validados.
-Añadir otro botón que se activará cuando el array clientes contenga datos. Al pulsar el botón se pintarán todos los datos del array Clientes en otra ventana. Pintad la información utilizando tablas y de manera que se vean todos los datos claros y bien formateados.  */
-/* Habrá un botón "guardar" que validará todos los datos introducidos y en caso de ser correctos se creará un objeto Cliente con todos esos datos y los almacenará en un array "misClientes". En caso de ser todos correctos se mostrará un mensaje indicando que se han guardado los datos y se limpiarán los campos del formulario.
-
-El objeto Cliente se compone de nombre, dirección (tipo_via, nombre_vía, número,...) y mascota(nombre, edad, descripción).
-En caso de que alguno de los campos no sea correcto debéis resaltarlo e indicar que se ha producido un error. No borrar los datos introducidos, que sea el usuario el que lo corrija.
-Poner el foco en el primer campo incorrecto para que el usuario empiece a corregir.
-No se guardarán los datos en el array los datos hasta que estos no estén bien validados.
-Añadir otro botón que se activará cuando el array clientes contenga datos. Al pulsar el botón se pintarán todos los datos del array 
-Clientes en otra ventana. Pintad la información utilizando tablas y de manera que se vean todos los datos claros y bien formateados.  */
-
 
 const NOMBRE_MASCOTA= document.getElementById("nombreMascota");
 const FECHA_NACIMIENTO= document.getElementById("fechaNacimiento");
@@ -171,9 +142,7 @@ botonOculto.addEventListener("click",()=>{
     ${element.direccion.numero}</li><li>${element.direccion.localidad}</li><li>${element.direccion.cp}</li></ul></td>
     <td><ul><li>Nombre: ${element.mascota.nombre}</li><li>F. Nacimiento: ${element.mascota.edad}</li>
     <li>Raza: ${element.mascota.raza}</li><li>Descripción: ${element.mascota.descripcion}</li></ul></td></tr></table></div>`;
-    
     });
-    
 })
 
 
