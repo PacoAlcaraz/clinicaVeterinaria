@@ -76,7 +76,7 @@ background-image: conic-gradient(from 0deg at 50% 50%, #073AFF00 0%, #FF0000FF 2
 }
 
 .input_container > input {
-  width: 210px;
+  
 height: 30px;
 font-size: inherit;
 
