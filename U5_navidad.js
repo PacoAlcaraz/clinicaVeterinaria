@@ -12,7 +12,7 @@ const NUMERO= document.getElementById("numero");
 const botonOculto= document.getElementById("botonOculto");
 const FORMULARIO= document.getElementById("formulario");
 
-const regexNombre= /(?=^[A-Z][a-z]{2,}(\s[A-Z][a-z]{2,}){2}$)(?=^.{3,30}$)/;
+const regexNombre= /(?=^([A-Z][a-z]{2,}\s)?[A-Z][a-z]{2,}(\s[A-Z][a-z]{2,}){2}$)(?=^.{3,30}$)/;
 const regexLocalidad= /^[A-Z\s]{1,20}$/;
 const regexCP= /^30\d{3}$/;
 const regexTipoVia= /^(Avenida|Calle|Carretera|Vía)$/;
@@ -100,9 +100,9 @@ validarCampos(NUMERO,regexNumero);
 
 document.getElementById("formulario").addEventListener("submit", (event) => {
     event.preventDefault();
-    botonOculto.hidden=true;
     
-    arrayErrores.push(validarFormulario(NOMBRE_MASCOTA,regexNombreMascota,"Longitud mínima 2 y máxima 25, comienzo por mayúscula"));
+    
+    arrayErrores.push(validarFormulario(NOMBRE_MASCOTA,regexNombreMascota,"Entre 2 y 25, comienzo por mayúscula"));
     arrayErrores.push(validarFormulario(FECHA_NACIMIENTO,regexFechaNacimiento,"dd-mm-aaaa"));
     arrayErrores.push(validarFormulario(RAZA,regexRaza,"Comienzo por mayúscula"));
     arrayErrores.push(validarFormulario(DESCRIPCION,regexDescripcion,"Máximo 200 carácteres"));
@@ -114,6 +114,7 @@ document.getElementById("formulario").addEventListener("submit", (event) => {
     arrayErrores.push(validarFormulario(NUMERO,regexNumero,"De 1 a 999"));
     
     if(arrayErrores.every(check)){
+        botonOculto.hidden=true;
         arrayErrores.length=0;
         let direccion= new Direccion(TIPO_VIA.value,NOMBRE_VIA.value,NUMERO.value,LOCALIDAD.value,CP.value);
         let mascota= new Mascota(NOMBRE_MASCOTA.value,FECHA_NACIMIENTO.value,RAZA.value,DESCRIPCION.value);
@@ -136,12 +137,14 @@ botonOculto.addEventListener("click",()=>{
     let miVentana = window.open("","_blank", "width=400, height=250, resizable=no");
     
     clientes.forEach(function(element){
-        
+        const {nombre,direccion:{tipoVia,nombreVia,numero,localidad,cp},mascota:{nombre:nombreM,edad,raza,descripcion}}= element;
+        //const {tipoVia,nombreVia,numero,localidad,cp}= element.direccion;
+        //const {nombre:nombreM,edad,raza,descripcion}= element.mascota;
         miVentana.document.body.innerHTML+= `<div class="tabla"><table><tr><th>Nombre Cliente</th><th>Direccion</th><th>Mascota</th>
-    </tr><tr><td>${element.nombre}</td><td><ul><li>${element.direccion.tipoVia}, ${element.direccion.nombreVia}, 
-    ${element.direccion.numero}</li><li>${element.direccion.localidad}</li><li>${element.direccion.cp}</li></ul></td>
-    <td><ul><li>Nombre: ${element.mascota.nombre}</li><li>F. Nacimiento: ${element.mascota.edad}</li>
-    <li>Raza: ${element.mascota.raza}</li><li>Descripción: ${element.mascota.descripcion}</li></ul></td></tr></table></div>`;
+    </tr><tr><td>${nombre}</td><td><ul><li>${tipoVia}, ${nombreVia}, 
+    ${numero}</li><li>${localidad}</li><li>${cp}</li></ul></td>
+    <td><ul><li>Nombre: ${nombreM}</li><li>F. Nacimiento: ${edad}</li>
+    <li>Raza: ${raza}</li><li>Descripción: ${descripcion}</li></ul></td></tr></table></div>`;
     });
 })
 
